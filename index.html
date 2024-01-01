@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-jNQltxv+cT+BvzXiJ3o2KxmH2b/lZUhZRjZXtcDNK5eP5LQNTZKvmNRtjQqRChIn9F5ItX+Q3+Ve4b0gnagOCYw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    
+    <style>
+        
+    
+        @keyframes bigSmile {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .animate-slide {
+            transition: transform 1s ease-in-out;
+        }
+
+        .animate-slide:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeInUp {
+      0% {
+        transform: translateY(0px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX();
+        opacity: 1;
+      }
+    }
+
+    .animate-fadeInUp {
+      animation: fadeInUp 2s ease-in-out;
+    }
+
+    @keyframes slideInFromLeft {
+      0% {
+        transform: translateX(-100px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .animate-slideInFromLeft {
+      animation: slideInFromLeft 2s ease-in-out;
+    }
+    html {
+       scroll-behavior: smooth ;
+    }
+    </style>
+    <title>Document</title>
+    
+    
+</head>
+<body>
+
+  <div class="">
+    <nav class="bg-gradient-to-r from-gray-800 to-gray-600 p-4 h-28 w-auto flex justify-centerc relative">
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="text-white text-xl font-semibold"><i class="fa-brands fa-yoast w-max h-max"></i></div>
+        <div class="absolute text-5xl text-slate-300 left-48 font-bold transition-all duration-300 select-none animate-slideInFromLeft">Welcome</div>
+        <div class="space-x-5">
+          <a href="#" class="text-white cursor-pointer hover:font-semibold transition-all duration-200 ease-in animate-fadeInUp">Home</a>
+          <a href="#my-project" class="text-white cursor-pointer hover:font-semibold transition-all duration-200 ease-in animate-fadeInUp">Projects</a>
+          <a href="#my-skills" class="text-white cursor-pointer hover:font-semibold transition-all duration-200 ease-in animate-fadeInUp">Skills</a>
+          <a href="#contact-me" class="text-white cursor-pointer hover:font-semibold transition-all duration-200 ease-in animate-fadeInUp">Contact</a>
+          <!-- Resume icon -->
+          <div class="absolute right-12 top-8">
+            <a href="#" id="resumeIcon" onclick="toggleResumeModal()" class="w-12 h-12 bg-violet-400 hover:bg-violet-600 text-white font-semibold flex items-center justify-center rounded-full cursor-pointer">
+              <i class="fas fa-file-pdf text-lg"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  
+    <section class="relative bg-sky-100 mx-auto w-full h-[780px] flex flex-row justify-center space-x-16 items-center gap-x-28 animate-fadeInUp bg-cover bg-center" style="background-image: url('/Images/Hero-Bg.jpg');">
+      <img src="Images/x-flame-1.png" alt="" class="absolute top-1 right-4 w-32">
+      <img src="Images/x-flame-2.png" alt="" class="absolute w-52 bottom-0 left-0">
+      <div class="absolute text-8xl text-slate-300 bottom-3 right-5 font-bold transition-all duration-300 select-none">Yuvraj Chavan</div>
+  
+      <!-- My Image -->
+      <div class="max-w-[780px] animate-slide mt-0 overflow-hidden pl-12 pb-">
+        <div class="w-[390px] h-[390px] rounded-full overflow-hidden mx-auto border-4 border-slate-700 relative group shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+          <img src="Images/myimg.jpg" alt="Your Image" class="w-full h-full object-cover rounded-full group-hover:ring-4 ring-slate-500 transition duration-300 animate-bigSmile">
+        </div>
+      </div>
+  
+      <!-- My Info -->
+      <div class="flex flex-col justify-center ml-5 gap-8">
+        <div class="text-4xl text-indigo-800 font-mono font-medium">Hi! Yuvraj Chavan</div>
+        <div class="text-3xl leading-9">
+          I am a <span class="font-bold text-amber-900 role"></span>
+        </div>
+        <div class="mt-4 w-[70%] font-medium text-xl">
+          Hello! I'm Passionate about technology and working on MERN stack and Machine Learning.
+        </div>
+        <div class="flex flex-row justify-between relative">
+          <div class="w-24 h-35 bg-violet-400 hover:bg-violet-600 text-white font-semibold py-2 px-4 mt-36  rounded inline-block transition duration-300 ease-in-out cursor-pointer">Hire me</div>
+          <img src="Images/undraw_startup_life_re_8ow9.svg" alt="" class="w-[200px] h-[300px] absolute left-32 mb-24">
+        </div>
+      </div>
+    </section>
+  
+    <!-- Resume Modal -->
+    <div id="resumeModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+      <div class="bg-white p-8  rounded-lg">
+        <!-- Resume content -->
+        <!-- You can replace the link below with the actual link to your resume file -->
+        <embed src="./Images/Yuvraj_Chavan__17_dec (1).pdf" type="application/pdf" width="100%" height="500px" />
+        
+        <!-- Download button within the opened modal -->
+        <a href="./Images/Yuvraj_Chavan__17_dec (1).pdf" download>
+          <button class="bg-violet-400 text-white font-semibold py-3 px-6 rounded mt-6 block w-full">Download Resume</button>
+        </a>
+        
+        <!-- Close button -->
+        <button class="text-gray-500 hover:text-gray-700 absolute top-4 right-4" onclick="toggleResumeModal()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+  
+    <!-- Add this script at the end of your HTML document -->
+    <script>
+      
+    </script>
+  </div>
+  
+
+  <div>
+    <!-- Your project section goes here -->
+    <section class="bg-gray-200 mx-auto py-16 px-4 sm:px-8 flex flex-col items-center" id="my-project">
+
+      <h1 class="text-5xl font-extrabold mb-8 text-gray-600 font-mono opacity-70 " >My Projects</h1>
+  
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-8 sm:gap-16 lg:gap-32">
+          <!-- Project Card 1 -->
+          <div class="bg-white flex flex-col items-center p-6 rounded-lg shadow-lg">
+              <h2 class="text-xl font-bold mb-2">Razorpay-Clone</h2>
+              <img src="Images/Razorpay-Clone.png" alt="" class="w-3/4 mb-4 rounded-lg max-w-full">
+              <p class="text-gray-900">A responsive and stylish payment gateway interface built with <b>HTML</b> and <b>Tailwind CSS</b> for seamless online transactions.</p>
+          </div>
+  
+          <!-- Project Card 2 -->
+          <div class="bg-white flex flex-col items-center p-6 rounded-lg shadow-lg">
+              <h2 class="text-xl font-bold mb-2">Discord-Clone</h2>
+              <img src="Images/Discord-clone.png" alt="" class="w-3/4 mb-4 rounded-lg max-w-full">
+              <p class="text-gray-900">A responsive and stylish payment gateway interface built with <b>HTML</b> and <b>Tailwind CSS</b> for seamless online transactions.</p>
+          </div>
+      </div>
+  
+  </section>
+  
+  
+
+
+<section class="max-w-screen-xl mx-auto py-20 relative h-[600px] bg-gradient-to-r from-gray-300 to-gray-500" id="my-skills">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./Images/Skills-BG.jpg');"></div>
+
+    <div class="relative z-10 text-center text-white">
+      <h1 class="text-6xl font-bold mb-8 font-mono text-gray-600">Skills</h1>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Skill Card 1 -->
+        <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
+          <i class="fas fa-code text-5xl text-blue-500 mb-4"></i>
+          <h2 class="text-xl font-semibold mb-2 text-black">Programming Language</h2>
+          <p class="text-gray-600">Python, C++, SQL, HTML, CSS, JavaScript, Java(Basic)</p>
+        </div>
+
+        <!-- Skill Card 2 -->
+        <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
+          <i class="fas fa-tools text-5xl text-green-500 mb-4"></i>
+          <h2 class="text-xl font-semibold mb-2 text-black">Technologies & Tools</h2>
+          <p class="text-gray-600">ReactJS, NodeJS, Tailwind CSS, MongoDB, Git and GitHub, Figma, VS Code, Replit</p>
+        </div>
+
+        <!-- Skill Card 3 -->
+        <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
+          <i class="fas fa-book-open text-5xl text-indigo-500 mb-4"></i>
+          <h2 class="text-xl font-semibold text-blackmb-2">Coursework</h2>
+          <p class="text-gray-600">Data Structures and Algorithms, Web Development, Data Science..</p>
+        </div>
+
+        <!-- Skill Card 4 -->
+        <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
+          <i class="fas fa-graduation-cap text-5xl text-orange-500 mb-4"></i>
+          <h2 class="text-xl font-semibold mb-2">Relevant Courses</h2>
+          <p class="text-gray-600">Maths and Data Science (Python), Operating System, DBMS, OOP(C++), Computer-Network</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+    <div class="flex items-center justify-center min-h-screen bg-gradient-to-r from-gray-700 to-black" id="contact-me">
+      <div class="w-full max-w-lg p-8 bg-white rounded shadow-lg animate-fade-in">
+        <h1 class="text-4xl font-extrabold mb-6 text-cyan-600 border-b-4 border-cyan-500 pb-2">Contact Me</h1>
+
+        <h3 class="text-gray-600 mb-8">Feel free to get in touch with me</h3>
+    
+        <form action="" method="POST">
+          <div class="mb-4">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              class="w-full px-4 py-2 border rounded"
+            />
+          </div>
+    
+          <div class="mb-4">
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              class="w-full px-4 py-2 border rounded"
+            />
+          </div>
+    
+          <div class="mb-4">
+            <input
+              type="text"
+              name="subject"
+              placeholder="Subject"
+              class="w-full px-4 py-2 border rounded"
+            />
+          </div>
+    
+          <div class="mb-6">
+            <textarea
+              name="message"
+              cols="30"
+              rows="5"
+              placeholder="Your Message"
+              class="w-full px-4 py-2 border rounded"
+            ></textarea>
+          </div>
+          <div class="flex justify-end">
+            <button
+              type="submit"
+              class="px-6 py-2 rounded transition duration-300 ease-in-out bg-cyan-500 text-white hover:bg-cyan-600"
+            >
+              Send Message
+            </button>
+          </div>
+          
+          
+          </div>
+        </form>
+      </div>
+    </div>
+    
+  
+
+    <footer class="bg-gray-800 text-white py-12 relative">
+      <div class="container mx-auto flex flex-col md:flex-row justify-between items-end">
+        
+        <!-- Yuvraj Chavan -->
+        <div class="mb-4 md:mb-0 absolute bottom-0 left-0">
+          <div class="text-6xl text-slate-300 font-bold transition-all duration-300 select-none group opacity-10 pb-2 left-3">
+            Yuvraj Chavan
+            <span class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300"></span>
+          </div>
+        </div>
+    
+        <!-- Links Section -->
+        <div class="flex space-x-4 items-center mb-4 md:mb-0 pl-[33rem]">
+          <div>
+            <a href="#my-project" class="text-gray-300 hover:text-white transition-all duration-300">Projects</a>
+          </div>
+          <div>
+            <a href="#my-skills" class="text-gray-300 hover:text-white transition-all duration-300">Skills</a>
+          </div>
+          <div>
+            <a href="#contact-me" class="text-gray-300 hover:text-white transition-all duration-300">Contact Me</a>
+          </div>
+        </div>
+    
+        <!-- Icons Section -->
+        <div class="flex space-x-4 items-end absolute bottom-3 right-5">
+          <i class="fab fa-linkedin icon hover:text-cyan-500 transition-all duration-300"></i>
+          <i class="fab fa-github icon hover:text-cyan-500 transition-all duration-300"></i>
+          <i class="fab fa-twitter icon hover:text-cyan-500 transition-all duration-300"></i>
+          <i class="fab fa-instagram icon hover:text-cyan-500 transition-all duration-300"></i>
+          <i class="far fa-envelope icon hover:text-cyan-500 transition-all duration-300"></i>
+        </div>
+      </div>
+    
+      <!-- Copyright Text -->
+      <div class="text-center text-gray-500 bottom-0 mt-10">
+        &copy; 2024 Yuvraj Chavan. All rights reserved.
+      </div>
+    </footer>
+    
+  </div>
+    
+       <script>
+        var typeData = new Typed(".role", {
+            strings: [
+                "GFG Student Chapter President.",
+                "GDSC DSA Lead.",
+                "MERN Developer.",
+                "Problem Solver.",
+                "Fresher.",
+            ],
+            loop: true,
+            typeSpeed: 50,
+            backSpeed: 40,
+            backDelay: 500,
+        });
+        function toggleResumeModal() {
+          const modal = document.getElementById('resumeModal');
+          modal.classList.toggle('hidden');
+
+          const modalOverlay = document.querySelector('.modal-overlay');
+          modalOverlay.addEventListener('click', function(event) {
+            // Check if the click occurred outside the modal content
+            if (!modal.contains(event.target)) {
+              modal.classList.add('hidden');
+              modalOverlay.removeEventListener('click', arguments.callee);
+            }
+          });
+        }
+
+  
+ 
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+    <script src="https://kit.fontawesome.com/226d30ac94.js" crossorigin="anonymous"></script>
+
+    <script src="index.js"></script>
+    
+</body>
+</html>
