@@ -1,6 +1,9 @@
 {
+  "homepage": "https://yuvraj98.github.io/MyPortFolio",
   "scripts": {
-    "start": "vite"
+    "start": "vite",
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d build"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.15",
